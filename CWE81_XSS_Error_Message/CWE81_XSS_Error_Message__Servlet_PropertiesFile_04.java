@@ -52,11 +52,11 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
                     properties.load(streamFileInput);
                     /* POTENTIAL FLAW: Read data from a .properties file */
                     data = properties.getProperty("data");
-                }
+                } 
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-                }
+                } 
                 finally
                 {
                     /* Close stream reading object */
@@ -65,21 +65,21 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
                         if (streamFileInput != null)
                         {
                             streamFileInput.close();
-                        }
-                    }
+                        } 
+                    } 
                     catch (IOException exceptIO)
                     {
                         IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
-                    }
-                }
-            }
-        }
+                    } 
+                } 
+            } 
+        } 
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
 
         if (data != null)
         {
@@ -88,9 +88,9 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B1() - use goodsource and badsink by changing PRIVATE_STATIC_FINAL_TRUE to PRIVATE_STATIC_FINAL_FALSE */
     private void goodG2B1(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -101,14 +101,14 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }
+        } 
 
         if (data != null)
         {
@@ -117,9 +117,9 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B2() - use goodsource and badsink by reversing statements in if */
     private void goodG2B2(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -129,13 +129,13 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
         {
             /* FIX: Use a hardcoded string */
             data = "foo";
-        }
+        } 
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
 
         if (data != null)
         {
@@ -144,15 +144,15 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B1(request, response);
         goodG2B2(request, response);
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -163,5 +163,5 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_04 extends Abstract
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
-}
+    } 
+} 

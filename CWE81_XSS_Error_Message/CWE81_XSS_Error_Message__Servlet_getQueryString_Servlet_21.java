@@ -41,9 +41,9 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     private String bad_source(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -62,19 +62,19 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
                     {
                         data = token.substring(3); /* set data to "foo" */
                         break; /* exit while loop */
-                    }
-                }
-            }
-        }
+                    } 
+                } 
+            } 
+        } 
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
 
         return data;
-    }
+    } 
 
     /* The variables below are used to drive control flow in the source functions. */
     private boolean goodG2B1_private = false;
@@ -84,7 +84,7 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
     {
         goodG2B1(request, response);
         goodG2B2(request, response);
-    }
+    } 
 
     /* goodG2B1() - use goodsource and badsink by setting the variable to false instead of true */
     private void goodG2B1(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -101,9 +101,9 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     private String goodG2B1_source(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -114,17 +114,17 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }
+        } 
 
         return data;
-    }
+    } 
 
     /* goodG2B2() - use goodsource and badsink by reversing the blocks in the if in the sink function */
     private void goodG2B2(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -141,9 +141,9 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     private String goodG2B2_source(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -153,16 +153,16 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
         {
             /* FIX: Use a hardcoded string */
             data = "foo";
-        }
+        } 
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
 
         return data;
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -173,6 +173,6 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_21 extends 
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
+    } 
 
-}
+} 

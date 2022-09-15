@@ -28,7 +28,7 @@ public class CWE191_Integer_Underflow__short_rand_predec_61b
         data = (short)((new java.security.SecureRandom()).nextInt(1+Short.MAX_VALUE-Short.MIN_VALUE)+Short.MIN_VALUE);
 
         return data;
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink */
     public short goodG2BSource() throws Throwable
@@ -39,7 +39,7 @@ public class CWE191_Integer_Underflow__short_rand_predec_61b
         data = 2;
 
         return data;
-    }
+    } 
 
     /* goodB2G() - use badsource and goodsink */
     public short goodB2GSource() throws Throwable
@@ -50,5 +50,5 @@ public class CWE191_Integer_Underflow__short_rand_predec_61b
         data = (short)((new java.security.SecureRandom()).nextInt(1+Short.MAX_VALUE-Short.MIN_VALUE)+Short.MIN_VALUE);
 
         return data;
-    }
-}
+    } 
+} 

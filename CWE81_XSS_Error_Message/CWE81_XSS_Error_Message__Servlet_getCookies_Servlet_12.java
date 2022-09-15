@@ -36,16 +36,16 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_12 extends Abst
                 {
                     /* POTENTIAL FLAW: Read data from the first cookie value */
                     data = cookieSources[0].getValue();
-                }
-            }
-        }
+                } 
+            } 
+        } 
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }
+        } 
 
         if (data != null)
         {
@@ -54,9 +54,9 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_12 extends Abst
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink by changing the "if" so that
      * both branches use the GoodSource */
@@ -67,14 +67,14 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_12 extends Abst
         {
             /* FIX: Use a hardcoded string */
             data = "foo";
-        }
+        } 
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }
+        } 
 
         if (data != null)
         {
@@ -83,14 +83,14 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_12 extends Abst
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -101,5 +101,5 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_12 extends Abst
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
-}
+    } 
+} 

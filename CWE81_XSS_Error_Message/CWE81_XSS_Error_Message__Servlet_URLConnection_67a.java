@@ -33,7 +33,7 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_67a extends Abstract
     static class Container
     {
         public String containerOne;
-    }
+    } 
 
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -56,11 +56,11 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_67a extends Abstract
                 /* This will be reading the first "line" of the response body,
                  * which could be very long if there are no newlines in the HTML */
                 data = readerBuffered.readLine();
-            }
+            } 
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            }
+            } 
             finally
             {
                 /* clean up stream reading objects */
@@ -69,36 +69,36 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_67a extends Abstract
                     if (readerBuffered != null)
                     {
                         readerBuffered.close();
-                    }
-                }
+                    } 
+                } 
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                }
+                } 
 
                 try
                 {
                     if (readerInputStream != null)
                     {
                         readerInputStream.close();
-                    }
-                }
+                    } 
+                } 
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                }
-            }
-        }
+                } 
+            } 
+        } 
 
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE81_XSS_Error_Message__Servlet_URLConnection_67b()).badSink(dataContainer , request, response );
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -111,7 +111,7 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_67a extends Abstract
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE81_XSS_Error_Message__Servlet_URLConnection_67b()).goodG2BSink(dataContainer , request, response );
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -122,5 +122,5 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_67a extends Abstract
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
-}
+    } 
+} 

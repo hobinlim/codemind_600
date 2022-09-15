@@ -25,11 +25,11 @@ public class CWE83_XSS_Attribute__Servlet_File_53b
     public void badSink(String data , HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         (new CWE83_XSS_Attribute__Servlet_File_53c()).badSink(data , request, response);
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink */
     public void goodG2BSink(String data , HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         (new CWE83_XSS_Attribute__Servlet_File_53c()).goodG2BSink(data , request, response);
-    }
-}
+    } 
+} 

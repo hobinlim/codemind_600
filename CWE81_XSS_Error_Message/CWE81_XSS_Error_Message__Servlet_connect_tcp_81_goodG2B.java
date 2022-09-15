@@ -32,7 +32,7 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_81_goodG2B extends CWE
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
-}
+    } 
+} 

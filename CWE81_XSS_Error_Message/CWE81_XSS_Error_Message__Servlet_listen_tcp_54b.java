@@ -25,11 +25,11 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_54b
     public void badSink(String data , HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         (new CWE81_XSS_Error_Message__Servlet_listen_tcp_54c()).badSink(data , request, response);
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink */
     public void goodG2BSink(String data , HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         (new CWE81_XSS_Error_Message__Servlet_listen_tcp_54c()).goodG2BSink(data , request, response);
-    }
-}
+    } 
+} 

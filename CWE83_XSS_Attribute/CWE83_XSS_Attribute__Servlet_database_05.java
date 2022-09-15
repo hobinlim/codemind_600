@@ -56,11 +56,11 @@ public class CWE83_XSS_Attribute__Servlet_database_05 extends AbstractTestCaseSe
                     resultSet = preparedStatement.executeQuery();
                     /* POTENTIAL FLAW: Read data from a database query resultset */
                     data = resultSet.getString(1);
-                }
+                } 
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error with SQL statement", exceptSql);
-                }
+                } 
                 finally
                 {
                     /* Close database objects */
@@ -69,53 +69,53 @@ public class CWE83_XSS_Attribute__Servlet_database_05 extends AbstractTestCaseSe
                         if (resultSet != null)
                         {
                             resultSet.close();
-                        }
-                    }
+                        } 
+                    } 
                     catch (SQLException exceptSql)
                     {
                         IO.logger.log(Level.WARNING, "Error closing ResultSet", exceptSql);
-                    }
+                    } 
 
                     try
                     {
                         if (preparedStatement != null)
                         {
                             preparedStatement.close();
-                        }
-                    }
+                        } 
+                    } 
                     catch (SQLException exceptSql)
                     {
                         IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSql);
-                    }
+                    } 
 
                     try
                     {
                         if (connection != null)
                         {
                             connection.close();
-                        }
-                    }
+                        } 
+                    } 
                     catch (SQLException exceptSql)
                     {
                         IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
-                    }
-                }
-            }
-        }
+                    } 
+                } 
+            } 
+        } 
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
 
         if (data != null)
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B1() - use goodsource and badsink by changing privateTrue to privateFalse */
     private void goodG2B1(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -126,22 +126,22 @@ public class CWE83_XSS_Attribute__Servlet_database_05 extends AbstractTestCaseSe
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }
+        } 
 
         if (data != null)
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B2() - use goodsource and badsink by reversing statements in if */
     private void goodG2B2(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -151,27 +151,27 @@ public class CWE83_XSS_Attribute__Servlet_database_05 extends AbstractTestCaseSe
         {
             /* FIX: Use a hardcoded string */
             data = "foo";
-        }
+        } 
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }
+        } 
 
         if (data != null)
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B1(request, response);
         goodG2B2(request, response);
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -182,5 +182,5 @@ public class CWE83_XSS_Attribute__Servlet_database_05 extends AbstractTestCaseSe
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
-}
+    } 
+} 

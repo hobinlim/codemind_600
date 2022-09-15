@@ -29,9 +29,9 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_41 extends Abstract
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -46,16 +46,16 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_41 extends Abstract
             {
                 /* POTENTIAL FLAW: Read data from the first cookie value */
                 data = cookieSources[0].getValue();
-            }
-        }
+            } 
+        } 
 
         badSink(data , request, response );
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }
+    } 
 
     private void goodG2BSink(String data , HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -64,9 +64,9 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_41 extends Abstract
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -77,7 +77,7 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_41 extends Abstract
         data = "foo";
 
         goodG2BSink(data , request, response );
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -88,5 +88,5 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_41 extends Abstract
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
-}
+    } 
+} 

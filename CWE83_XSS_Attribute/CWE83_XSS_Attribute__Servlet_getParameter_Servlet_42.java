@@ -30,7 +30,7 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_42 extends Abstra
         data = request.getParameter("name");
 
         return data;
-    }
+    } 
 
     /* use badsource and badsink */
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -41,9 +41,9 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_42 extends Abstra
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     private String goodG2BSource(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -53,7 +53,7 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_42 extends Abstra
         data = "foo";
 
         return data;
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -64,14 +64,14 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_42 extends Abstra
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -82,6 +82,6 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_42 extends Abstra
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
+    } 
 
-}
+} 

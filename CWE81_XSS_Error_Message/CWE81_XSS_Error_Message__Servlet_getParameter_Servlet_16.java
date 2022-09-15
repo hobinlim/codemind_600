@@ -32,7 +32,7 @@ public class CWE81_XSS_Error_Message__Servlet_getParameter_Servlet_16 extends Ab
             /* POTENTIAL FLAW: Read data from a querystring using getParameter */
             data = request.getParameter("name");
             break;
-        }
+        } 
 
         if (data != null)
         {
@@ -41,9 +41,9 @@ public class CWE81_XSS_Error_Message__Servlet_getParameter_Servlet_16 extends Ab
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -55,7 +55,7 @@ public class CWE81_XSS_Error_Message__Servlet_getParameter_Servlet_16 extends Ab
             /* FIX: Use a hardcoded string */
             data = "foo";
             break;
-        }
+        } 
 
         if (data != null)
         {
@@ -64,14 +64,14 @@ public class CWE81_XSS_Error_Message__Servlet_getParameter_Servlet_16 extends Ab
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }
+        } 
 
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -82,5 +82,5 @@ public class CWE81_XSS_Error_Message__Servlet_getParameter_Servlet_16 extends Ab
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
-}
+    } 
+} 

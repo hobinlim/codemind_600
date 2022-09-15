@@ -45,11 +45,11 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_12 extends AbstractTest
                     properties.load(streamFileInput);
                     /* POTENTIAL FLAW: Read data from a .properties file */
                     data = properties.getProperty("data");
-                }
+                } 
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-                }
+                } 
                 finally
                 {
                     /* Close stream reading object */
@@ -58,30 +58,30 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_12 extends AbstractTest
                         if (streamFileInput != null)
                         {
                             streamFileInput.close();
-                        }
-                    }
+                        } 
+                    } 
                     catch (IOException exceptIO)
                     {
                         IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
-                    }
-                }
-            }
-        }
+                    } 
+                } 
+            } 
+        } 
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }
+        } 
 
         if (data != null)
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     /* goodG2B() - use goodsource and badsink by changing the "if" so that
      * both branches use the GoodSource */
@@ -92,27 +92,27 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_12 extends AbstractTest
         {
             /* FIX: Use a hardcoded string */
             data = "foo";
-        }
+        } 
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }
+        } 
 
         if (data != null)
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }
+        } 
 
-    }
+    } 
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }
+    } 
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -123,5 +123,5 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_12 extends AbstractTest
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }
-}
+    } 
+} 
