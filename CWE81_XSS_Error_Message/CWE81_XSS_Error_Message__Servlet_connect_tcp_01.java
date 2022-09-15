@@ -13,7 +13,7 @@ Template File: sources-sink-01.tmpl.java
 *
 * */
 
-package testcases.CWE81_XSS_Error_Message;
+package testcases.CWE81_XSS_Error_Message; 
 
 import testcasesupport.*;
 
