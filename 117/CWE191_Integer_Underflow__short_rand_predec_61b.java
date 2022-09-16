@@ -20,7 +20,7 @@ import testcasesupport.*;
 
 public class CWE191_Integer_Underflow__short_rand_predec_61b
 {
-    public short badSource() throws Throwable
+    public short badSource() throws Throwable 
     {
         short data;
 
