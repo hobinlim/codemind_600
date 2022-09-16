@@ -29,7 +29,7 @@ import java.util.logging.Level;
 public class CWE81_XSS_Error_Message__Servlet_connect_tcp_01 extends AbstractTestCaseServlet
 {
     /* uses badsource and badsink */
-    public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable 
     {
         String data;
 
