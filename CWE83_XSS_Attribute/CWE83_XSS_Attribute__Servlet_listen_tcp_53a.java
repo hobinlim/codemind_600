@@ -56,11 +56,11 @@ public class CWE83_XSS_Attribute__Servlet_listen_tcp_53a extends AbstractTestCas
 
                 /* POTENTIAL FLAW: Read data using a listening tcp connection */
                 data = readerBuffered.readLine();
-            } 
+            }  
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            } 
+            }  
             finally
             {
                 /* Close stream reading objects */
@@ -69,24 +69,24 @@ public class CWE83_XSS_Attribute__Servlet_listen_tcp_53a extends AbstractTestCas
                     if (readerBuffered != null)
                     {
                         readerBuffered.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                } 
+                }  
 
                 try
                 {
                     if (readerInputStream != null)
                     {
                         readerInputStream.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                } 
+                }  
 
                 /* Close socket objects */
                 try
@@ -94,34 +94,34 @@ public class CWE83_XSS_Attribute__Servlet_listen_tcp_53a extends AbstractTestCas
                     if (socket != null)
                     {
                         socket.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing Socket", exceptIO);
-                } 
+                }  
 
                 try
                 {
                     if (listener != null)
                     {
                         listener.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing ServerSocket", exceptIO);
-                } 
-            } 
-        } 
+                }  
+            }  
+        }  
 
         (new CWE83_XSS_Attribute__Servlet_listen_tcp_53b()).badSink(data , request, response);
-    } 
+    }  
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -132,7 +132,7 @@ public class CWE83_XSS_Attribute__Servlet_listen_tcp_53a extends AbstractTestCas
         data = "foo";
 
         (new CWE83_XSS_Attribute__Servlet_listen_tcp_53b()).goodG2BSink(data , request, response);
-    } 
+    }  
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -143,5 +143,5 @@ public class CWE83_XSS_Attribute__Servlet_listen_tcp_53a extends AbstractTestCas
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    } 
-} 
+    }  
+}  

@@ -41,8 +41,8 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75a extends Abstrac
             {
                 /* POTENTIAL FLAW: Read data from the first cookie value */
                 data = cookieSources[0].getValue();
-            } 
-        } 
+            }  
+        }  
 
         /* serialize data to a byte array */
         ByteArrayOutputStream streamByteArrayOutput = null;
@@ -55,11 +55,11 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75a extends Abstrac
             outputObject.writeObject(data);
             byte[] dataSerialized = streamByteArrayOutput.toByteArray();
             (new CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75b()).badSink(dataSerialized , request, response );
-        } 
+        }  
         catch (IOException exceptIO)
         {
             IO.logger.log(Level.WARNING, "IOException in serialization", exceptIO);
-        } 
+        }  
         finally
         {
             /* clean up stream writing objects */
@@ -68,31 +68,31 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75a extends Abstrac
                 if (outputObject != null)
                 {
                     outputObject.close();
-                } 
-            } 
+                }  
+            }  
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ObjectOutputStream", exceptIO);
-            } 
+            }  
 
             try
             {
                 if (streamByteArrayOutput != null)
                 {
                     streamByteArrayOutput.close();
-                } 
-            } 
+                }  
+            }  
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ByteArrayOutputStream", exceptIO);
-            } 
-        } 
-    } 
+            }  
+        }  
+    }  
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -113,11 +113,11 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75a extends Abstrac
             outputObject.writeObject(data);
             byte[] dataSerialized = streamByteArrayOutput.toByteArray();
             (new CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75b()).goodG2BSink(dataSerialized , request, response );
-        } 
+        }  
         catch (IOException exceptIO)
         {
             IO.logger.log(Level.WARNING, "IOException in serialization", exceptIO);
-        } 
+        }  
         finally
         {
             /* clean up stream writing objects */
@@ -126,26 +126,26 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75a extends Abstrac
                 if (outputObject != null)
                 {
                     outputObject.close();
-                } 
-            } 
+                }  
+            }  
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ObjectOutputStream", exceptIO);
-            } 
+            }  
 
             try
             {
                 if (streamByteArrayOutput != null)
                 {
                     streamByteArrayOutput.close();
-                } 
-            } 
+                }  
+            }  
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ByteArrayOutputStream", exceptIO);
-            } 
-        } 
-    } 
+            }  
+        }  
+    }  
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -156,5 +156,5 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_75a extends Abstrac
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    } 
-} 
+    }  
+}  

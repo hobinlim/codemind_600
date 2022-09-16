@@ -37,9 +37,9 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_22a extends Abstr
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        } 
+        }  
 
-    } 
+    }  
 
     /* The public static variables below are used to drive control flow in the source functions.
      * The public static variable mimics a global variable in the C/C++ language family. */
@@ -50,7 +50,7 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_22a extends Abstr
     {
         goodG2B1(request, response);
         goodG2B2(request, response);
-    } 
+    }  
 
     /* goodG2B1() - use goodsource and badsink by setting the static variable to false instead of true */
     private void goodG2B1(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -64,9 +64,9 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_22a extends Abstr
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        } 
+        }  
 
-    } 
+    }  
 
     /* goodG2B2() - use goodsource and badsink by reversing the blocks in the if in the sink function */
     private void goodG2B2(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -80,9 +80,9 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_22a extends Abstr
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        } 
+        }  
 
-    } 
+    }  
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -93,6 +93,6 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_22a extends Abstr
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    } 
+    }  
 
-} 
+}  

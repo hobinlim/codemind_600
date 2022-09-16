@@ -33,12 +33,12 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_66a extends Abstr
         String[] dataArray = new String[5];
         dataArray[2] = data;
         (new CWE83_XSS_Attribute__Servlet_getParameter_Servlet_66b()).badSink(dataArray , request, response );
-    } 
+    }  
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -51,7 +51,7 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_66a extends Abstr
         String[] dataArray = new String[5];
         dataArray[2] = data;
         (new CWE83_XSS_Attribute__Servlet_getParameter_Servlet_66b()).goodG2BSink(dataArray , request, response );
-    } 
+    }  
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -62,5 +62,5 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_66a extends Abstr
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    } 
-} 
+    }  
+}  

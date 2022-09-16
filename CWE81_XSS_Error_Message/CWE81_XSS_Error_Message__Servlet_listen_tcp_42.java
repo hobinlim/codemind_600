@@ -55,11 +55,11 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_42 extends AbstractTest
 
                 /* POTENTIAL FLAW: Read data using a listening tcp connection */
                 data = readerBuffered.readLine();
-            } 
+            }  
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            } 
+            }  
             finally
             {
                 /* Close stream reading objects */
@@ -68,24 +68,24 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_42 extends AbstractTest
                     if (readerBuffered != null)
                     {
                         readerBuffered.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                } 
+                }  
 
                 try
                 {
                     if (readerInputStream != null)
                     {
                         readerInputStream.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                } 
+                }  
 
                 /* Close socket objects */
                 try
@@ -93,29 +93,29 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_42 extends AbstractTest
                     if (socket != null)
                     {
                         socket.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing Socket", exceptIO);
-                } 
+                }  
 
                 try
                 {
                     if (listener != null)
                     {
                         listener.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing ServerSocket", exceptIO);
-                } 
-            } 
-        } 
+                }  
+            }  
+        }  
 
         return data;
-    } 
+    }  
 
     /* use badsource and badsink */
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -129,9 +129,9 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_42 extends AbstractTest
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        } 
+        }  
 
-    } 
+    }  
 
     private String goodG2BSource(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -141,7 +141,7 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_42 extends AbstractTest
         data = "foo";
 
         return data;
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -155,14 +155,14 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_42 extends AbstractTest
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        } 
+        }  
 
-    } 
+    }  
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    } 
+    }  
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -173,6 +173,6 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_42 extends AbstractTest
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    } 
+    }  
 
-} 
+}  

@@ -36,11 +36,11 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_61b
             {
                 /* POTENTIAL FLAW: Read data from the first cookie value */
                 data = cookieSources[0].getValue();
-            } 
-        } 
+            }  
+        }  
 
         return data;
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     public String goodG2BSource(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -51,5 +51,5 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_61b
         data = "foo";
 
         return data;
-    } 
-} 
+    }  
+}  

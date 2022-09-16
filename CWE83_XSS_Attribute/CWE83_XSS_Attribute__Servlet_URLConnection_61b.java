@@ -51,11 +51,11 @@ public class CWE83_XSS_Attribute__Servlet_URLConnection_61b
                 /* This will be reading the first "line" of the response body,
                  * which could be very long if there are no newlines in the HTML */
                 data = readerBuffered.readLine();
-            } 
+            }  
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            } 
+            }  
             finally
             {
                 /* clean up stream reading objects */
@@ -64,29 +64,29 @@ public class CWE83_XSS_Attribute__Servlet_URLConnection_61b
                     if (readerBuffered != null)
                     {
                         readerBuffered.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                } 
+                }  
 
                 try
                 {
                     if (readerInputStream != null)
                     {
                         readerInputStream.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                } 
-            } 
-        } 
+                }  
+            }  
+        }  
 
         return data;
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     public String goodG2BSource(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -97,5 +97,5 @@ public class CWE83_XSS_Attribute__Servlet_URLConnection_61b
         data = "foo";
 
         return data;
-    } 
-} 
+    }  
+}  

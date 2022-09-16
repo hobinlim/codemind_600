@@ -37,20 +37,20 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_73a extends Abstrac
             {
                 /* POTENTIAL FLAW: Read data from the first cookie value */
                 data = cookieSources[0].getValue();
-            } 
-        } 
+            }  
+        }  
 
         LinkedList<String> dataLinkedList = new LinkedList<String>();
         dataLinkedList.add(0, data);
         dataLinkedList.add(1, data);
         dataLinkedList.add(2, data);
         (new CWE83_XSS_Attribute__Servlet_getCookies_Servlet_73b()).badSink(dataLinkedList , request, response );
-    } 
+    }  
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -65,7 +65,7 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_73a extends Abstrac
         dataLinkedList.add(1, data);
         dataLinkedList.add(2, data);
         (new CWE83_XSS_Attribute__Servlet_getCookies_Servlet_73b()).goodG2BSink(dataLinkedList , request, response );
-    } 
+    }  
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -76,6 +76,6 @@ public class CWE83_XSS_Attribute__Servlet_getCookies_Servlet_73a extends Abstrac
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    } 
+    }  
 
-} 
+}  

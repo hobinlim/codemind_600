@@ -40,9 +40,9 @@ public class CWE83_XSS_Attribute__Servlet_database_45 extends AbstractTestCaseSe
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        } 
+        }  
 
-    } 
+    }  
 
     /* uses badsource and badsink */
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -68,11 +68,11 @@ public class CWE83_XSS_Attribute__Servlet_database_45 extends AbstractTestCaseSe
 
                 /* POTENTIAL FLAW: Read data from a database query resultset */
                 data = resultSet.getString(1);
-            } 
+            }  
             catch (SQLException exceptSql)
             {
                 IO.logger.log(Level.WARNING, "Error with SQL statement", exceptSql);
-            } 
+            }  
             finally
             {
                 /* Close database objects */
@@ -81,47 +81,47 @@ public class CWE83_XSS_Attribute__Servlet_database_45 extends AbstractTestCaseSe
                     if (resultSet != null)
                     {
                         resultSet.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing ResultSet", exceptSql);
-                } 
+                }  
 
                 try
                 {
                     if (preparedStatement != null)
                     {
                         preparedStatement.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSql);
-                } 
+                }  
 
                 try
                 {
                     if (connection != null)
                     {
                         connection.close();
-                    } 
-                } 
+                    }  
+                }  
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
-                } 
-            } 
-        } 
+                }  
+            }  
+        }  
 
         dataBad = data;
         badSink(request, response);
-    } 
+    }  
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    } 
+    }  
 
     private void goodG2BSink(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -131,9 +131,9 @@ public class CWE83_XSS_Attribute__Servlet_database_45 extends AbstractTestCaseSe
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        } 
+        }  
 
-    } 
+    }  
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -145,7 +145,7 @@ public class CWE83_XSS_Attribute__Servlet_database_45 extends AbstractTestCaseSe
 
         dataGoodG2B = data;
         goodG2BSink(request, response);
-    } 
+    }  
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -156,5 +156,5 @@ public class CWE83_XSS_Attribute__Servlet_database_45 extends AbstractTestCaseSe
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    } 
-} 
+    }  
+}  
