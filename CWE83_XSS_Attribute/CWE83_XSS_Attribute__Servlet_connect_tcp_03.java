@@ -29,7 +29,7 @@ import java.util.logging.Level;
 public class CWE83_XSS_Attribute__Servlet_connect_tcp_03 extends AbstractTestCaseServlet
 {
     /* uses badsource and badsink */
-    public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
+    public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable 
     {
         String data;
         if (5 == 5)
