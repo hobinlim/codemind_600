@@ -36,8 +36,8 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_01 extends Abst
             {
                 /* POTENTIAL FLAW: Read data from the first cookie value */
                 data = cookieSources[0].getValue();
-            }    
-        }    
+            }     
+        }     
 
         if (data != null)
         {
@@ -46,14 +46,14 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_01 extends Abst
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }    
+        }     
 
-    }    
+    }     
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }    
+    }     
 
     /* goodG2B() - uses goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -70,9 +70,9 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_01 extends Abst
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }    
+        }     
 
-    }    
+    }     
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -83,6 +83,6 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_01 extends Abst
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }    
-}    
+    }     
+}     
 

@@ -51,11 +51,11 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_17 extends AbstractT
                 /* This will be reading the first "line" of the response body,
                  * which could be very long if there are no newlines in the HTML */
                 data = readerBuffered.readLine();
-            }    
+            }     
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            }    
+            }     
             finally
             {
                 /* clean up stream reading objects */
@@ -64,26 +64,26 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_17 extends AbstractT
                     if (readerBuffered != null)
                     {
                         readerBuffered.close();
-                    }    
-                }    
+                    }     
+                }     
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                }    
+                }     
 
                 try
                 {
                     if (readerInputStream != null)
                     {
                         readerInputStream.close();
-                    }    
-                }    
+                    }     
+                }     
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                }    
-            }    
-        }    
+                }     
+            }     
+        }     
 
         for (int i = 0; i < 1; i++)
         {
@@ -94,9 +94,9 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_17 extends AbstractT
                 * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
                 */
                 response.sendError(404, "<br>bad() - Parameter name has value " + data);
-            }    
-        }    
-    }    
+            }     
+        }     
+    }     
 
     /* goodG2B() - use goodsource and badsink by reversing the block outside the
      * for statement with the one in the for statement */
@@ -116,14 +116,14 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_17 extends AbstractT
                 * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
                 */
                 response.sendError(404, "<br>bad() - Parameter name has value " + data);
-            }    
-        }    
-    }    
+            }     
+        }     
+    }     
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }    
+    }     
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -134,5 +134,5 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_17 extends AbstractT
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }    
-}    
+    }     
+}     

@@ -55,11 +55,11 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
                     readerBuffered = new BufferedReader(readerInputStream);
                     /* POTENTIAL FLAW: Read data using an outbound tcp connection */
                     data = readerBuffered.readLine();
-                }    
+                }     
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-                }    
+                }     
                 finally
                 {
                     /* clean up stream reading objects */
@@ -68,24 +68,24 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
                         if (readerBuffered != null)
                         {
                             readerBuffered.close();
-                        }    
-                    }    
+                        }     
+                    }     
                     catch (IOException exceptIO)
                     {
                         IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                    }    
+                    }     
 
                     try
                     {
                         if (readerInputStream != null)
                         {
                             readerInputStream.close();
-                        }    
-                    }    
+                        }     
+                    }     
                     catch (IOException exceptIO)
                     {
                         IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                    }    
+                    }     
 
                     /* clean up socket objects */
                     try
@@ -93,21 +93,21 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
                         if (socket != null)
                         {
                             socket.close();
-                        }    
-                    }    
+                        }     
+                    }     
                     catch (IOException exceptIO)
                     {
                         IO.logger.log(Level.WARNING, "Error closing Socket", exceptIO);
-                    }    
-                }    
-            }    
-        }    
+                    }     
+                }     
+            }     
+        }     
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }    
+        }     
 
         if (data != null)
         {
@@ -116,9 +116,9 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }    
+        }     
 
-    }    
+    }     
 
     /* goodG2B1() - use goodsource and badsink by changing PRIVATE_STATIC_FINAL_FIVE==5 to PRIVATE_STATIC_FINAL_FIVE!=5 */
     private void goodG2B1(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -129,14 +129,14 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }    
+        }     
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }    
+        }     
 
         if (data != null)
         {
@@ -145,9 +145,9 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }    
+        }     
 
-    }    
+    }     
 
     /* goodG2B2() - use goodsource and badsink by reversing statements in if */
     private void goodG2B2(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -157,13 +157,13 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
         {
             /* FIX: Use a hardcoded string */
             data = "foo";
-        }    
+        }     
         else
         {
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
-        }    
+        }     
 
         if (data != null)
         {
@@ -172,15 +172,15 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }    
+        }     
 
-    }    
+    }     
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B1(request, response);
         goodG2B2(request, response);
-    }    
+    }     
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -191,5 +191,5 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_06 extends AbstractTes
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }    
-}    
+    }     
+}     
