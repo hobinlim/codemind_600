@@ -29,7 +29,7 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_81_bad extends CWE83_XS
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }      
+        }       
 
-    }      
-}      
+    }       
+}       

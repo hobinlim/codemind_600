@@ -52,11 +52,11 @@ public class CWE83_XSS_Attribute__Servlet_database_61b
 
                 /* POTENTIAL FLAW: Read data from a database query resultset */
                 data = resultSet.getString(1);
-            }      
+            }       
             catch (SQLException exceptSql)
             {
                 IO.logger.log(Level.WARNING, "Error with SQL statement", exceptSql);
-            }      
+            }       
             finally
             {
                 /* Close database objects */
@@ -65,41 +65,41 @@ public class CWE83_XSS_Attribute__Servlet_database_61b
                     if (resultSet != null)
                     {
                         resultSet.close();
-                    }      
-                }      
+                    }       
+                }       
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing ResultSet", exceptSql);
-                }      
+                }       
 
                 try
                 {
                     if (preparedStatement != null)
                     {
                         preparedStatement.close();
-                    }      
-                }      
+                    }       
+                }       
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSql);
-                }      
+                }       
 
                 try
                 {
                     if (connection != null)
                     {
                         connection.close();
-                    }      
-                }      
+                    }       
+                }       
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
-                }      
-            }      
-        }      
+                }       
+            }       
+        }       
 
         return data;
-    }      
+    }       
 
     /* goodG2B() - use goodsource and badsink */
     public String goodG2BSource(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -110,5 +110,5 @@ public class CWE83_XSS_Attribute__Servlet_database_61b
         data = "foo";
 
         return data;
-    }      
-}      
+    }       
+}       
