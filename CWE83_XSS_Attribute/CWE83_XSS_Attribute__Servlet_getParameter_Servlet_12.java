@@ -30,22 +30,22 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_12 extends Abstra
         {
             /* POTENTIAL FLAW: Read data from a querystring using getParameter */
             data = request.getParameter("name");
-        }  
+        }   
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }  
+        }   
 
         if (data != null)
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }  
+        }   
 
-    }  
+    }   
 
     /* goodG2B() - use goodsource and badsink by changing the "if" so that
      * both branches use the GoodSource */
@@ -56,27 +56,27 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_12 extends Abstra
         {
             /* FIX: Use a hardcoded string */
             data = "foo";
-        }  
+        }   
         else
         {
 
             /* FIX: Use a hardcoded string */
             data = "foo";
 
-        }  
+        }   
 
         if (data != null)
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }  
+        }   
 
-    }  
+    }   
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }  
+    }   
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -87,5 +87,5 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_12 extends Abstra
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }  
-}  
+    }   
+}   

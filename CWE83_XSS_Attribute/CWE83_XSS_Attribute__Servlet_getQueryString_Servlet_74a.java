@@ -41,21 +41,21 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_74a extends Abs
                 {
                     data = token.substring(3); /* set data to "foo" */
                     break; /* exit while loop */
-                }  
-            }  
-        }  
+                }   
+            }   
+        }   
 
         HashMap<Integer,String> dataHashMap = new HashMap<Integer,String>();
         dataHashMap.put(0, data);
         dataHashMap.put(1, data);
         dataHashMap.put(2, data);
         (new CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_74b()).badSink(dataHashMap , request, response );
-    }  
+    }   
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }  
+    }   
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -70,7 +70,7 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_74a extends Abs
         dataHashMap.put(1, data);
         dataHashMap.put(2, data);
         (new CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_74b()).goodG2BSink(dataHashMap , request, response );
-    }  
+    }   
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -81,5 +81,5 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_74a extends Abs
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }  
-}  
+    }   
+}   

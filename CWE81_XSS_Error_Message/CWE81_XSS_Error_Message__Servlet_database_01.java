@@ -52,11 +52,11 @@ public class CWE81_XSS_Error_Message__Servlet_database_01 extends AbstractTestCa
 
                 /* POTENTIAL FLAW: Read data from a database query resultset */
                 data = resultSet.getString(1);
-            }  
+            }   
             catch (SQLException exceptSql)
             {
                 IO.logger.log(Level.WARNING, "Error with SQL statement", exceptSql);
-            }  
+            }   
             finally
             {
                 /* Close database objects */
@@ -65,38 +65,38 @@ public class CWE81_XSS_Error_Message__Servlet_database_01 extends AbstractTestCa
                     if (resultSet != null)
                     {
                         resultSet.close();
-                    }  
-                }  
+                    }   
+                }   
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing ResultSet", exceptSql);
-                }  
+                }   
 
                 try
                 {
                     if (preparedStatement != null)
                     {
                         preparedStatement.close();
-                    }  
-                }  
+                    }   
+                }   
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSql);
-                }  
+                }   
 
                 try
                 {
                     if (connection != null)
                     {
                         connection.close();
-                    }  
-                }  
+                    }   
+                }   
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
-                }  
-            }  
-        }  
+                }   
+            }   
+        }   
 
         if (data != null)
         {
@@ -105,14 +105,14 @@ public class CWE81_XSS_Error_Message__Servlet_database_01 extends AbstractTestCa
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }  
+        }   
 
-    }  
+    }   
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }  
+    }   
 
     /* goodG2B() - uses goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -129,9 +129,9 @@ public class CWE81_XSS_Error_Message__Servlet_database_01 extends AbstractTestCa
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }  
+        }   
 
-    }  
+    }   
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -142,6 +142,6 @@ public class CWE81_XSS_Error_Message__Servlet_database_01 extends AbstractTestCa
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }  
-}  
+    }   
+}   
 

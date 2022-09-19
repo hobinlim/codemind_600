@@ -37,20 +37,20 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_72a extends Abs
             {
                 /* POTENTIAL FLAW: Read data from the first cookie value */
                 data = cookieSources[0].getValue();
-            }  
-        }  
+            }   
+        }   
 
         Vector<String> dataVector = new Vector<String>(5);
         dataVector.add(0, data);
         dataVector.add(1, data);
         dataVector.add(2, data);
         (new CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_72b()).badSink(dataVector , request, response );
-    }  
+    }   
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }  
+    }   
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -65,7 +65,7 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_72a extends Abs
         dataVector.add(1, data);
         dataVector.add(2, data);
         (new CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_72b()).goodG2BSink(dataVector , request, response );
-    }  
+    }   
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -76,6 +76,6 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_72a extends Abs
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }  
+    }   
 
-}  
+}   

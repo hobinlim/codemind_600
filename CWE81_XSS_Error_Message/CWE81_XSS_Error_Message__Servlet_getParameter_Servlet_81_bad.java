@@ -32,7 +32,7 @@ public class CWE81_XSS_Error_Message__Servlet_getParameter_Servlet_81_bad extend
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }  
+        }   
 
-    }  
-}  
+    }   
+}   
