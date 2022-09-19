@@ -45,17 +45,17 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_75b
                 * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
                 */
                 response.sendError(404, "<br>bad() - Parameter name has value " + data);
-            }     
+            }      
 
-        }     
+        }      
         catch (IOException exceptIO)
         {
             IO.logger.log(Level.WARNING, "IOException in deserialization", exceptIO);
-        }     
+        }      
         catch (ClassNotFoundException exceptClassNotFound)
         {
             IO.logger.log(Level.WARNING, "ClassNotFoundException in deserialization", exceptClassNotFound);
-        }     
+        }      
         finally
         {
             /* clean up stream reading objects */
@@ -64,26 +64,26 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_75b
                 if (streamObjectInput != null)
                 {
                     streamObjectInput.close();
-                }     
-            }     
+                }      
+            }      
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ObjectInputStream", exceptIO);
-            }     
+            }      
 
             try
             {
                 if (streamByteArrayInput != null)
                 {
                     streamByteArrayInput.close();
-                }     
-            }     
+                }      
+            }      
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ByteArrayInputStream", exceptIO);
-            }     
-        }     
-    }     
+            }      
+        }      
+    }      
 
     /* goodG2B() - use goodsource and badsink */
     public void goodG2BSink(byte[] dataSerialized , HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -105,17 +105,17 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_75b
                 * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
                 */
                 response.sendError(404, "<br>bad() - Parameter name has value " + data);
-            }     
+            }      
 
-        }     
+        }      
         catch (IOException exceptIO)
         {
             IO.logger.log(Level.WARNING, "IOException in deserialization", exceptIO);
-        }     
+        }      
         catch (ClassNotFoundException exceptClassNotFound)
         {
             IO.logger.log(Level.WARNING, "ClassNotFoundException in deserialization", exceptClassNotFound);
-        }     
+        }      
         finally
         {
             /* clean up stream reading objects */
@@ -124,24 +124,24 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_75b
                 if (streamObjectInput != null)
                 {
                     streamObjectInput.close();
-                }     
-            }     
+                }      
+            }      
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ObjectInputStream", exceptIO);
-            }     
+            }      
 
             try
             {
                 if (streamByteArrayInput != null)
                 {
                     streamByteArrayInput.close();
-                }     
-            }     
+                }      
+            }      
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ByteArrayInputStream", exceptIO);
-            }     
-        }     
-    }     
-}     
+            }      
+        }      
+    }      
+}      

@@ -32,7 +32,7 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_67a extends Abstrac
     static class Container
     {
         public String containerOne;
-    }     
+    }      
 
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -52,11 +52,11 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_67a extends Abstrac
 
                 /* POTENTIAL FLAW: Read data from a .properties file */
                 data = properties.getProperty("data");
-            }     
+            }      
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            }     
+            }      
             finally
             {
                 /* Close stream reading object */
@@ -65,24 +65,24 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_67a extends Abstrac
                     if (streamFileInput != null)
                     {
                         streamFileInput.close();
-                    }     
-                }     
+                    }      
+                }      
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
-                }     
-            }     
-        }     
+                }      
+            }      
+        }      
 
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE81_XSS_Error_Message__Servlet_PropertiesFile_67b()).badSink(dataContainer , request, response );
-    }     
+    }      
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }     
+    }      
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -95,7 +95,7 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_67a extends Abstrac
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE81_XSS_Error_Message__Servlet_PropertiesFile_67b()).goodG2BSink(dataContainer , request, response );
-    }     
+    }      
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -106,5 +106,5 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_67a extends Abstrac
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }     
-}     
+    }      
+}      

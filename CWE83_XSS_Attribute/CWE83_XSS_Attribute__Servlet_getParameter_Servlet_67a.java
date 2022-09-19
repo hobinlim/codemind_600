@@ -26,7 +26,7 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_67a extends Abstr
     static class Container
     {
         public String containerOne;
-    }     
+    }      
 
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -38,12 +38,12 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_67a extends Abstr
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE83_XSS_Attribute__Servlet_getParameter_Servlet_67b()).badSink(dataContainer , request, response );
-    }     
+    }      
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }     
+    }      
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -56,7 +56,7 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_67a extends Abstr
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE83_XSS_Attribute__Servlet_getParameter_Servlet_67b()).goodG2BSink(dataContainer , request, response );
-    }     
+    }      
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -67,5 +67,5 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_67a extends Abstr
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }     
-}     
+    }      
+}      

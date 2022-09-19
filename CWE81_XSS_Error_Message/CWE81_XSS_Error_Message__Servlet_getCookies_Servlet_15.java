@@ -38,15 +38,15 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_15 extends Abst
                 {
                     /* POTENTIAL FLAW: Read data from the first cookie value */
                     data = cookieSources[0].getValue();
-                }     
-            }     
+                }      
+            }      
             break;
         default:
             /* INCIDENTAL: CWE 561 Dead Code, the code below will never run
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
             break;
-        }     
+        }      
 
         if (data != null)
         {
@@ -55,9 +55,9 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_15 extends Abst
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }     
+        }      
 
-    }     
+    }      
 
     /* goodG2B1() - use goodsource and badsink by changing the  switch to switch(5) */
     private void goodG2B1(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -75,7 +75,7 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_15 extends Abst
             /* FIX: Use a hardcoded string */
             data = "foo";
             break;
-        }     
+        }      
 
         if (data != null)
         {
@@ -84,9 +84,9 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_15 extends Abst
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }     
+        }      
 
-    }     
+    }      
 
     /* goodG2B2() - use goodsource and badsink by reversing the blocks in the switch  */
     private void goodG2B2(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -104,7 +104,7 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_15 extends Abst
              * but ensure data is inititialized before the Sink to avoid compiler errors */
             data = null;
             break;
-        }     
+        }      
 
         if (data != null)
         {
@@ -113,15 +113,15 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_15 extends Abst
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }     
+        }      
 
-    }     
+    }      
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B1(request, response);
         goodG2B2(request, response);
-    }     
+    }      
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -132,5 +132,5 @@ public class CWE81_XSS_Error_Message__Servlet_getCookies_Servlet_15 extends Abst
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }     
-}     
+    }      
+}      

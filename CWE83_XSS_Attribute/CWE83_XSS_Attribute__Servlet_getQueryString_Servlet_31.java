@@ -43,12 +43,12 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_31 extends Abst
                     {
                         data = token.substring(3); /* set data to "foo" */
                         break; /* exit while loop */
-                    }     
-                }     
-            }     
+                    }      
+                }      
+            }      
 
             dataCopy = data;
-        }     
+        }      
         {
             String data = dataCopy;
 
@@ -56,15 +56,15 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_31 extends Abst
             {
                 /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
                 response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-            }     
+            }      
 
-        }     
-    }     
+        }      
+    }      
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }     
+    }      
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -77,7 +77,7 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_31 extends Abst
             data = "foo";
 
             dataCopy = data;
-        }     
+        }      
         {
             String data = dataCopy;
 
@@ -85,10 +85,10 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_31 extends Abst
             {
                 /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
                 response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-            }     
+            }      
 
-        }     
-    }     
+        }      
+    }      
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -99,5 +99,5 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_31 extends Abst
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }     
-}     
+    }      
+}      

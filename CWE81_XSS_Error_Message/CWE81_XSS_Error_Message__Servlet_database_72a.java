@@ -53,11 +53,11 @@ public class CWE81_XSS_Error_Message__Servlet_database_72a extends AbstractTestC
 
                 /* POTENTIAL FLAW: Read data from a database query resultset */
                 data = resultSet.getString(1);
-            }     
+            }      
             catch (SQLException exceptSql)
             {
                 IO.logger.log(Level.WARNING, "Error with SQL statement", exceptSql);
-            }     
+            }      
             finally
             {
                 /* Close database objects */
@@ -66,50 +66,50 @@ public class CWE81_XSS_Error_Message__Servlet_database_72a extends AbstractTestC
                     if (resultSet != null)
                     {
                         resultSet.close();
-                    }     
-                }     
+                    }      
+                }      
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing ResultSet", exceptSql);
-                }     
+                }      
 
                 try
                 {
                     if (preparedStatement != null)
                     {
                         preparedStatement.close();
-                    }     
-                }     
+                    }      
+                }      
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSql);
-                }     
+                }      
 
                 try
                 {
                     if (connection != null)
                     {
                         connection.close();
-                    }     
-                }     
+                    }      
+                }      
                 catch (SQLException exceptSql)
                 {
                     IO.logger.log(Level.WARNING, "Error closing Connection", exceptSql);
-                }     
-            }     
-        }     
+                }      
+            }      
+        }      
 
         Vector<String> dataVector = new Vector<String>(5);
         dataVector.add(0, data);
         dataVector.add(1, data);
         dataVector.add(2, data);
         (new CWE81_XSS_Error_Message__Servlet_database_72b()).badSink(dataVector , request, response );
-    }     
+    }      
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }     
+    }      
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -124,7 +124,7 @@ public class CWE81_XSS_Error_Message__Servlet_database_72a extends AbstractTestC
         dataVector.add(1, data);
         dataVector.add(2, data);
         (new CWE81_XSS_Error_Message__Servlet_database_72b()).goodG2BSink(dataVector , request, response );
-    }     
+    }      
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -135,6 +135,6 @@ public class CWE81_XSS_Error_Message__Servlet_database_72a extends AbstractTestC
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }     
+    }      
 
-}     
+}      
