@@ -38,9 +38,9 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_41 extends AbstractTes
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }   
+        }    
 
-    }   
+    }    
 
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -66,11 +66,11 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_41 extends AbstractTes
 
                 /* POTENTIAL FLAW: Read data using an outbound tcp connection */
                 data = readerBuffered.readLine();
-            }   
+            }    
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            }   
+            }    
             finally
             {
                 /* clean up stream reading objects */
@@ -79,24 +79,24 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_41 extends AbstractTes
                     if (readerBuffered != null)
                     {
                         readerBuffered.close();
-                    }   
-                }   
+                    }    
+                }    
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                }   
+                }    
 
                 try
                 {
                     if (readerInputStream != null)
                     {
                         readerInputStream.close();
-                    }   
-                }   
+                    }    
+                }    
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                }   
+                }    
 
                 /* clean up socket objects */
                 try
@@ -104,22 +104,22 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_41 extends AbstractTes
                     if (socket != null)
                     {
                         socket.close();
-                    }   
-                }   
+                    }    
+                }    
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing Socket", exceptIO);
-                }   
-            }   
-        }   
+                }    
+            }    
+        }    
 
         badSink(data , request, response );
-    }   
+    }    
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }   
+    }    
 
     private void goodG2BSink(String data , HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -131,9 +131,9 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_41 extends AbstractTes
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }   
+        }    
 
-    }   
+    }    
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -144,7 +144,7 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_41 extends AbstractTes
         data = "foo";
 
         goodG2BSink(data , request, response );
-    }   
+    }    
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -155,5 +155,5 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_41 extends AbstractTes
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }   
-}   
+    }    
+}    

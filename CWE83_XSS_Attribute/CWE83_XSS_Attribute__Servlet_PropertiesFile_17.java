@@ -47,11 +47,11 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_17 extends AbstractTest
 
                 /* POTENTIAL FLAW: Read data from a .properties file */
                 data = properties.getProperty("data");
-            }   
+            }    
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            }   
+            }    
             finally
             {
                 /* Close stream reading object */
@@ -60,14 +60,14 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_17 extends AbstractTest
                     if (streamFileInput != null)
                     {
                         streamFileInput.close();
-                    }   
-                }   
+                    }    
+                }    
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO);
-                }   
-            }   
-        }   
+                }    
+            }    
+        }    
 
         for (int i = 0; i < 1; i++)
         {
@@ -75,9 +75,9 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_17 extends AbstractTest
             {
                 /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
                 response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-            }   
-        }   
-    }   
+            }    
+        }    
+    }    
 
     /* goodG2B() - use goodsource and badsink by reversing the block outside the
      * for statement with the one in the for statement */
@@ -94,14 +94,14 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_17 extends AbstractTest
             {
                 /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
                 response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-            }   
-        }   
-    }   
+            }    
+        }    
+    }    
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }   
+    }    
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -112,5 +112,5 @@ public class CWE83_XSS_Attribute__Servlet_PropertiesFile_17 extends AbstractTest
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }   
-}   
+    }    
+}    

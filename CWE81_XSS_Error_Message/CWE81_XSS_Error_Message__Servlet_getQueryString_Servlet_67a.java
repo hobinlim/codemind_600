@@ -27,7 +27,7 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_67a extends
     static class Container
     {
         public String containerOne;
-    }   
+    }    
 
     public void bad(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
@@ -45,19 +45,19 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_67a extends
                 {
                     data = token.substring(3); /* set data to "foo" */
                     break; /* exit while loop */
-                }   
-            }   
-        }   
+                }    
+            }    
+        }    
 
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_67b()).badSink(dataContainer , request, response );
-    }   
+    }    
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }   
+    }    
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -70,7 +70,7 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_67a extends
         Container dataContainer = new Container();
         dataContainer.containerOne = data;
         (new CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_67b()).goodG2BSink(dataContainer , request, response );
-    }   
+    }    
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -81,5 +81,5 @@ public class CWE81_XSS_Error_Message__Servlet_getQueryString_Servlet_67a extends
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }   
-}   
+    }    
+}    

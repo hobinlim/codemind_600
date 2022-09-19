@@ -31,9 +31,9 @@ public class CWE83_XSS_Attribute__Servlet_connect_tcp_72b
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }   
+        }    
 
-    }   
+    }    
 
     /* goodG2B() - use goodsource and badsink */
     public void goodG2BSink(Vector<String> dataVector , HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -44,7 +44,7 @@ public class CWE83_XSS_Attribute__Servlet_connect_tcp_72b
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }   
+        }    
 
-    }   
-}   
+    }    
+}    

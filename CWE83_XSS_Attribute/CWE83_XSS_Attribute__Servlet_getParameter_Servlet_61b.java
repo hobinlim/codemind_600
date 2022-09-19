@@ -31,7 +31,7 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_61b
         data = request.getParameter("name");
 
         return data;
-    }   
+    }    
 
     /* goodG2B() - use goodsource and badsink */
     public String goodG2BSource(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -42,5 +42,5 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_61b
         data = "foo";
 
         return data;
-    }   
-}   
+    }    
+}    

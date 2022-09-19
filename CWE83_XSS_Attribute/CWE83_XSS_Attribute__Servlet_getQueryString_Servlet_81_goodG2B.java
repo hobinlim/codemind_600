@@ -29,7 +29,7 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_81_goodG2B exte
         {
             /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
             response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-        }   
+        }    
 
-    }   
-}   
+    }    
+}    
