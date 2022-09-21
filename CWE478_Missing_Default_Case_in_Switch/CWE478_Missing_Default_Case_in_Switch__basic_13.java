@@ -7,7 +7,7 @@ Template File: point-flaw-13.tmpl.java
 * @description
 * CWE: 478 Missing Default Case in Switch
 * Sinks:
-*    GoodSink: Use default case in switch statement
+*    GoodSink: Use default case in switch statement 
 *    BadSink : No default case in a switch statement
 * Flow Variant: 13 Control flow: if(IO.STATIC_FINAL_FIVE==5) and if(IO.STATIC_FINAL_FIVE!=5)
 *

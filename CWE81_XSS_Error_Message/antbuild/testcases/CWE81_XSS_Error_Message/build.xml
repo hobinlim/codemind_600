@@ -15,7 +15,7 @@
   <property name="servlet.jar" location="../../../lib/servlet-api.jar"/>
   <property name="commons-lang.jar" location="../../../lib/commons-lang-2.5.jar"/>
   <property name="commons-codec.jar" location="../../../lib/commons-codec-1.5.jar"/>
-  <property name="javamail.jar" location="../../../lib/javamail-1.4.4.jar"/>
+  <property name="javamail.jar" location="../../../lib/javamail-1.4.4.jar"/> 
   <path id="project.classpath">
     <pathelement location="${servlet.jar}"/>
     <pathelement location="${commons-lang.jar}"/>

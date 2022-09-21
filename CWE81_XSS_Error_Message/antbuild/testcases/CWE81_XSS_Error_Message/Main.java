@@ -23,7 +23,7 @@ public class Main {
 			 *		"CWE476_Null_Pointer_Dereference__getProperty_01" }       ;
  			 * could read class names from command line or use
 			 * http://sadun-util.sourceforge.net/api/org/sadun/util/
-			 * ClassPackageExplorer.html
+			 * ClassPackageExplorer.html 
 			 */
 
 			for (String className : args) {

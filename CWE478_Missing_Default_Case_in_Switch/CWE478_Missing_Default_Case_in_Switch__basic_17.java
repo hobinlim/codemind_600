@@ -7,7 +7,7 @@ Template File: point-flaw-17.tmpl.java
 * @description
 * CWE: 478 Missing Default Case in Switch
 * Sinks:
-*    GoodSink: Use default case in switch statement
+*    GoodSink: Use default case in switch statement 
 *    BadSink : No default case in a switch statement
 * Flow Variant: 17 Control flow: for loops
 *

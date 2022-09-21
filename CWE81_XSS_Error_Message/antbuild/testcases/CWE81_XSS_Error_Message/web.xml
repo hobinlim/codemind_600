@@ -14,7 +14,7 @@
 	<servlet>
        <description></description>
        <display-name>ServletMain</display-name>
-       <servlet-name>ServletMain</servlet-name>
+       <servlet-name>ServletMain</servlet-name> 
          <servlet-class>testcasesupport.ServletMain</servlet-class>
      </servlet>
      <servlet-mapping>

@@ -5,7 +5,7 @@ Template File: point-flaw-12.tmpl.java
 */
 /*
 * @description
-* CWE: 478 Missing Default Case in Switch
+* CWE: 478 Missing Default Case in Switch 
 * Sinks:
 *    GoodSink: Use default case in switch statement
 *    BadSink : No default case in a switch statement

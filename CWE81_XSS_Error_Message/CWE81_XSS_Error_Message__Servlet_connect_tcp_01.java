@@ -103,7 +103,7 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_01 extends AbstractTes
         if (data != null)
         {
             /* POTENTIAL FLAW: script code (e.g. id=<script>alert('xss')</script>) is sent to the client;
-            * The built-in J2EE server automatically does some HTML entity encoding.
+            * The built-in J2EE server automatically does some HTML entity encoding. 
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
