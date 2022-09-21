@@ -51,11 +51,11 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_81a extends Abstract
                 /* This will be reading the first "line" of the response body,
                  * which could be very long if there are no newlines in the HTML */
                 data = readerBuffered.readLine();
-            }       
+            }        
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
-            }       
+            }        
             finally
             {
                 /* clean up stream reading objects */
@@ -64,35 +64,35 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_81a extends Abstract
                     if (readerBuffered != null)
                     {
                         readerBuffered.close();
-                    }       
-                }       
+                    }        
+                }        
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
-                }       
+                }        
 
                 try
                 {
                     if (readerInputStream != null)
                     {
                         readerInputStream.close();
-                    }       
-                }       
+                    }        
+                }        
                 catch (IOException exceptIO)
                 {
                     IO.logger.log(Level.WARNING, "Error closing InputStreamReader", exceptIO);
-                }       
-            }       
-        }       
+                }        
+            }        
+        }        
 
         CWE81_XSS_Error_Message__Servlet_URLConnection_81_base baseObject = new CWE81_XSS_Error_Message__Servlet_URLConnection_81_bad();
         baseObject.action(data , request, response);
-    }       
+    }        
 
     public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
         goodG2B(request, response);
-    }       
+    }        
 
     /* goodG2B() - use goodsource and badsink */
     private void goodG2B(HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -104,7 +104,7 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_81a extends Abstract
 
         CWE81_XSS_Error_Message__Servlet_URLConnection_81_base baseObject = new CWE81_XSS_Error_Message__Servlet_URLConnection_81_goodG2B();
         baseObject.action(data , request, response);
-    }       
+    }        
 
     /* Below is the main(). It is only used when building this testcase on
      * its own for testing or for building a binary to use in testing binary
@@ -115,6 +115,6 @@ public class CWE81_XSS_Error_Message__Servlet_URLConnection_81a extends Abstract
            InstantiationException, IllegalAccessException
     {
         mainFromParent(args);
-    }       
+    }        
 
-}       
+}        

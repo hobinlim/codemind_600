@@ -42,17 +42,17 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_75b
             {
                 /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
                 response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-            }       
+            }        
 
-        }       
+        }        
         catch (IOException exceptIO)
         {
             IO.logger.log(Level.WARNING, "IOException in deserialization", exceptIO);
-        }       
+        }        
         catch (ClassNotFoundException exceptClassNotFound)
         {
             IO.logger.log(Level.WARNING, "ClassNotFoundException in deserialization", exceptClassNotFound);
-        }       
+        }        
         finally
         {
             /* clean up stream reading objects */
@@ -61,26 +61,26 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_75b
                 if (streamObjectInput != null)
                 {
                     streamObjectInput.close();
-                }       
-            }       
+                }        
+            }        
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ObjectInputStream", exceptIO);
-            }       
+            }        
 
             try
             {
                 if (streamByteArrayInput != null)
                 {
                     streamByteArrayInput.close();
-                }       
-            }       
+                }        
+            }        
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ByteArrayInputStream", exceptIO);
-            }       
-        }       
-    }       
+            }        
+        }        
+    }        
 
     /* goodG2B() - use goodsource and badsink */
     public void goodG2BSink(byte[] dataSerialized , HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -99,17 +99,17 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_75b
             {
                 /* POTENTIAL FLAW: Input is not verified/sanitized before use in an image tag */
                 response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
-            }       
+            }        
 
-        }       
+        }        
         catch (IOException exceptIO)
         {
             IO.logger.log(Level.WARNING, "IOException in deserialization", exceptIO);
-        }       
+        }        
         catch (ClassNotFoundException exceptClassNotFound)
         {
             IO.logger.log(Level.WARNING, "ClassNotFoundException in deserialization", exceptClassNotFound);
-        }       
+        }        
         finally
         {
             /* clean up stream reading objects */
@@ -118,24 +118,24 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_75b
                 if (streamObjectInput != null)
                 {
                     streamObjectInput.close();
-                }       
-            }       
+                }        
+            }        
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ObjectInputStream", exceptIO);
-            }       
+            }        
 
             try
             {
                 if (streamByteArrayInput != null)
                 {
                     streamByteArrayInput.close();
-                }       
-            }       
+                }        
+            }        
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing ByteArrayInputStream", exceptIO);
-            }       
-        }       
-    }       
-}       
+            }        
+        }        
+    }        
+}        

@@ -33,9 +33,9 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_67b
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }       
+        }        
 
-    }       
+    }        
 
     /* goodG2B() - use goodsource and badsink */
     public void goodG2BSink(CWE81_XSS_Error_Message__Servlet_connect_tcp_67a.Container dataContainer , HttpServletRequest request, HttpServletResponse response) throws Throwable
@@ -49,7 +49,7 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_67b
             * Therefore, to test this, change response.sendError to response.getWriter().println and remove the 404,
             */
             response.sendError(404, "<br>bad() - Parameter name has value " + data);
-        }       
+        }        
 
-    }       
-}       
+    }        
+}        
