@@ -9,7 +9,7 @@ Template File: sources-sinks-61a.tmpl.java
  * BadSource: rand Set data to result of rand()
  * GoodSource: A hardcoded non-zero, non-min, non-max, even number
  * Sinks: decrement
- *    GoodSink: Ensure there will not be an underflow before decrementing data
+ *    GoodSink: Ensure there will not be an underflow before decrementing data 
  *    BadSink : Decrement data, which can cause an Underflow
  * Flow Variant: 61 Data flow: data returned from one method to another in different classes in the same package
  *
